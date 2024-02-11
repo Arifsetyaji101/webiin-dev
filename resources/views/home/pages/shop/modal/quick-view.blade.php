@@ -16,7 +16,7 @@
                             <del>@currency($detail->price_coret)</del>
                            @endif
                        </div>
-                       <hr>
+
                        <div class="modal-product-brief">
                            <p>{!!$detail->description!!}</p>
                        </div>
@@ -48,9 +48,7 @@
                                </li>
                            </ul>
                        </div>
-                       <!-- <hr> -->
-                       <hr>
-                       <div class="ltn__social-media">
+                       {{-- <div class="ltn__social-media">
                            <ul>
                                <li>Share:</li>
                                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
@@ -59,8 +57,8 @@
                                <li><a href="#" title="Instagram"><i class="fab fa-instagram"></i></a></li>
 
                            </ul>
-                       </div>
-                       <label class="float-right mb-0"><a class="text-decoration" href="{{route('product.detail',$detail->slug)}}"><small>View Details</small></a></label>
+                       </div> --}}
+                       <label class="float-right mb-0"><a class="text-decoration" href="{{route('product.detail',$detail->slug)}}"><small>Lihat Detail</small></a></label>
                    </div>
                </div>
            </div>

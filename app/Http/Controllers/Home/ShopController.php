@@ -37,7 +37,7 @@ class ShopController extends Controller
         $subtotal = collect($cart)->sum(function($q){
             return $q['qty'] * $q['price'];
         });
-        $breadcrumb = 'Shop';
+        $breadcrumb = 'Template';
         $prod = $prod->newQuery()->where('category_id','!=',1000)->orderBy('created_at', 'DESC');
         if ($request->has('search')) {
             $prod->where('title', 'like', '%'.$request->input('search').'%');
@@ -66,7 +66,7 @@ class ShopController extends Controller
             return $q['qty'] * $q['price'];
         });
         $relateProduct = $this->productService->relatedProduct($category);
-        $breadcrumb = 'Detail Product';
+        $breadcrumb = 'Detail Template';
         return view('home.pages.shop.product-details',compact('detail','cart','subtotal','relateProduct','breadcrumb','count_cart'));
     }
 

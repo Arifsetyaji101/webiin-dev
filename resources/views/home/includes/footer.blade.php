@@ -56,7 +56,6 @@
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="{{ route('shop.index') }}">Template</a></li>
                                 <li><a href="{{ route('home.about') }}">Peertanyaan</a></li>
-                                <li><a href="#">Locations Map</a></li>
                             </ul>
                         </div>
                     </div>
@@ -66,9 +65,9 @@
                         <h4 class="footer-title">Layanan</h4>
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="#">Pembuatan Website</a></li>
-                                <li><a href="#">Pembuatan Web Apps</a></li>
-                                <li><a href="#">Aplikasi Mobile</a></li>
+                                <li><a href="{{route('shop.index')}}" disable>Pembuatan Website</a></li>
+                                <li><a href="" style="pointer-events: none"> Pembuatan Web Apps</a></li>
+                                <li><a href="" style="pointer-events: none"  >Aplikasi Mobile</a></li>
                             </ul>
                         </div>
                     </div>
@@ -81,7 +80,7 @@
 
                                 <li><a href="{{ route('login') }}">Sign in</a></li>
                                 <li><a href="{{ route('register') }}">Register</a></li>
-                                <li><a href="#">Blog</a></li>
+                                {{-- <li><a href="#">Blog</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -89,7 +88,7 @@
                 <div class="col-xl-3 col-md-6 col-sm-12 col-12">
                     <div class="footer-widget footer-newsletter-widget">
                         <h4 class="footer-title">Pembayaran</h4>
-                        <img src="{{ url('/storage/image/banner/2023/payment.png') }}" alt="Payment Image">
+                        <img src="{{ url('/themes-frontend/img/payment.png') }}" alt="Payment Image">
 
                     </div>
                 </div>
@@ -104,7 +103,7 @@
                         <p>All Rights Reserved @ webiin.com <span class="current-year"></span></p>
                     </div>
                 </div>
-                <div class="col-md-6 col-12 align-self-center">
+                {{-- <div class="col-md-6 col-12 align-self-center">
                     <div class="ltn__copyright-menu text-right text-end">
                         <ul>
                             <li><a href="#">Terms & Conditions</a></li>
@@ -112,7 +111,7 @@
                             <li><a href="#">Privacy & Policy</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

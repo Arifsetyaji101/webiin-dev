@@ -3,23 +3,22 @@
 <!-- ABOUT US AREA START -->
 <div class="ltn__about-us-area pt-120--- pb-120">
     <div class="container">
-        <div class="row">
-
-            <div class="col-lg-6 align-self-center">
+        <div class="text-center">
+            <div class="">
                 <div class="about-us-info-wrap">
                     <div class="section-title-area ltn__section-title-2">
                         {{-- <h6 class="section-subtitle ltn__secondary-color"><span><i
                                     class="fas fa-square-full"></i></span> {{$company->tagline}}</h6> --}}
-                        <h1 class="section-title">Cara Order</h1>
+                        <h1 class="section-title fs-1">Cara Order Website di Webiin</h1>
                         <p></p>
                     </div>
 
                 </div>
             </div>
-            <div class="col-lg-6 align-self-center">
-                <div class="ltn__team-item ltn__team-item-3 ltn__team-item-3-2" style="border-radius: 30px">
+            <div class="">
+                <div class="ltn__team-item ltn__team-item-3-2" style="border-radius: 10px">
                     <div class="team-img">
-                        <img src="{{ url('/storage/image/banner/2023/order.png') }}" alt="#"
+                        <img src="{{ url('/themes-frontend/img/order.png') }}" alt="#"
                              >
                     </div>
                 </div>

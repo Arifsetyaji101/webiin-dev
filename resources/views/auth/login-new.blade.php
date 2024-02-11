@@ -50,15 +50,23 @@
                     <div class="auth-form">
                         <div class="row">
                             <div class="col">
-                                <div class="logo-box"><a href="#" class="logo-text">Login</a></div>
+                                <div class="logo-box"><a href="{{route('login')}}" class="logo-text">Masuk atau
+                                        Daftar</a></div>
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
+                                    <a href="{{route('login.google.redirect')}}" type="button"
+                                        class="btn btn-danger btn-block btn-submit">
+                                        <i class="fab fa-google"></i>
+                                        Lanjutkan dengan Google</a>
+
+                                    <div class="text-center py-4">atau</div>
+
                                     <input type="hidden" name="url" value="{{URL::previous()}}">
                                     <div class="form-group">
                                         <input type="email" id="email" name="email"
                                             class="form-control @error('email') is-invalid @enderror"
                                             value="{{ old('email') }}" aria-describedby="emailHelp"
-                                            placeholder="Enter email">
+                                            placeholder="Masukkan Email">
 
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -69,7 +77,7 @@
                                     <div class="form-group">
                                         <input type="password"
                                             class="form-control @error('password') is-invalid @enderror" name="password"
-                                            id="password" placeholder="Password">
+                                            id="password" placeholder="Masukkan Password">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -77,8 +85,7 @@
                                         @enderror
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-block btn-submit">Masuk</button>
-                                    <a href="{{route('login.google.redirect')}}" type="button"
-                                        class="btn btn-danger btn-block btn-submit">Sign In Google</a>
+
                                     <div class="auth-options">
                                         <div class="custom-control custom-checkbox form-group">
                                             <input type="checkbox" class="custom-control-input" id="exampleCheck1">
@@ -89,7 +96,7 @@
                                 </form>
                                 <div class="text-center">
 
-                                    <label class="" for="">Belum Memiliki Akun?  </label>
+                                    <label class="" for="">Belum Memiliki Akun? </label>
                                     <a href="{{ route('register') }}" class="forgot-link">Daftar</a>
 
                                     {{-- <li><a href="{{ route('login') }}">Masuk</a></li>

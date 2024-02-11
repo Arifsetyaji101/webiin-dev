@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 order-lg-2 mb-100">
-                <div class="ltn__shop-options" >
+                <div class="ltn__shop-options">
                     <ul>
                         <li>
                             <div class="ltn__grid-list-tab-menu ">
@@ -16,8 +16,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li >
-                            <div class="short-by text-center" >
+                        {{-- <li>
+                            <div class="short-by text-center">
                                 <select class="nice-select">
                                     <option>Default sorting</option>
                                     <option>Sort by popularity</option>
@@ -26,7 +26,7 @@
                                     <option>Sort by price: high to low</option>
                                 </select>
                             </div>
-                        </li>
+                        </li> --}}
                         <li>
                             <div class="showing-product-number text-right text-end">
                                 <span>Showing {{$product->currentPage()}} of {{$product->total()}} results</span>
@@ -47,13 +47,13 @@
                                                     style="width: 300px; height:200px; object-fit:cover; "
                                                     src="{{$item->productImages->count() ? $item->productImages->first()->image : ''}}"
                                                     alt="#"></a>
-                                            <div class="product-badge">
+                                            {{-- <div class="product-badge">
                                                 <ul>
                                                     <li class="sale-badge">New</li>
                                                 </ul>
-                                            </div>
+                                            </div> --}}
                                         </div>
-                                        <div class="product-info">
+                                        <div class="product-info p-0 m-2">
                                             <div class="product-ratting">
                                             </div>
                                             <div>
@@ -71,8 +71,8 @@
                                                     </div>
                                                     @if ($item->link)
                                                     <div class="col-lg-6" style="text-align: right">
-                                                        <a href="{{$item->link}}" target="_blank" class="">
-                                                            <button class="btn-small theme-btn-5">Demo</button>
+                                                        <a href="{{$item->link}}" target="_blank" class="theme-btn-2 btn btn-effect-2 btn-product">
+                                                            Demo
                                                         </a>
                                                     </div>
                                                     @endif
@@ -98,32 +98,41 @@
                                             <a href="{{route('product.detail',$item->slug)}}">
                                                 <img src="{{$item->productImages->count() ? $item->productImages->first()->image : ''}}"
                                                     alt="#">
-                                                <div class="product-badge">
+                                                {{-- <div class="product-badge">
                                                     <ul>
                                                         <li class="sale-badge">New</li>
                                                     </ul>
-                                                </div>
+                                                </div> --}}
                                         </div>
-                                        <div class="product-info">
-                                            <h2 class="product-title"><a
-                                                    href="{route('product.detail',$item->slug)}}">{{$item->title}}</a>
-                                            </h2>
-                                            <div class="product-ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
-                                                    <li><a href="#"><i class="far fa-star"></i></a></li>
-                                                </ul>
+                                        <div class="d-flex align-items-center">
+                                            <div class="product-info px-3 pt-2">
+                                                <h2 class="product-title"><a
+                                                        href="{route('product.detail',$item->slug)}}">{{$item->title}}</a>
+                                                </h2>
+                                                <div class="product-ratting">
+                                                    <ul>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star-half-alt"></i></a></li>
+                                                        <li><a href="#"><i class="far fa-star"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="product-price">
+                                                    <span>Rp {{$item->price}}</span>
+                                                    <del>Rp {{$item->price}}</del>
+                                                </div>
+                                                <div class="product-brief">
+                                                    <p>{!!$item->description!!}</p>
+                                                </div>
                                             </div>
-                                            <div class="product-price">
-                                                <span>Rp {{$item->price}}</span>
-                                                <del>Rp {{$item->price}}</del>
+                                            @if ($item->link)
+                                            <div class="ms-auto pe-5">
+                                                <a href="{{$item->link}}" target="_blank" class="theme-btn-2 btn btn-effect-2 btn-product">
+                                                    Demo
+                                                </a>
                                             </div>
-                                            <div class="product-brief">
-                                                <p>{!!$item->description!!}</p>
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -143,24 +152,25 @@
                         <h4 class="ltn__widget-title ltn__widget-title-border">Product categories</h4>
                         <ul>
                             @foreach ($category as $item)
-                            <li><a href="#">{{$item->name}} <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    <!-- Search Widget -->
-                    <div class="widget ltn__search-widget">
-                        <h4 class="ltn__widget-title ltn__widget-title-border">Search Objects</h4>
-                        <form action="#">
-                            <input type="text" name="search" placeholder="Search your keyword...">
-                            <button type="submit"><i class="fas fa-search"></i></button>
-                        </form>
-                    </div>
-
-                </aside>
-            </div> --}}
+                            <li><a href="#">{{$item->name}} <span><i
+                    class="fas fa-long-arrow-alt-right"></i></span></a>
+            </li>
+            @endforeach
+            </ul>
         </div>
-    </div>
+        <!-- Search Widget -->
+        <div class="widget ltn__search-widget">
+            <h4 class="ltn__widget-title ltn__widget-title-border">Search Objects</h4>
+            <form action="#">
+                <input type="text" name="search" placeholder="Search your keyword...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+
+        </aside>
+    </div> --}}
+</div>
+</div>
 </div>
 <!-- PRODUCT DETAILS AREA END -->
 @endsection

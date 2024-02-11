@@ -11,7 +11,7 @@
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Daftar - Webiin</title>
+    <title>Daftar akun di Webiin</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
@@ -50,14 +50,14 @@
                     <div class="auth-form">
                         <div class="row">
                             <div class="col">
-                                <div class="logo-box"><a href="#" class="logo-text">Register Member</a></div>
+                                <div class="logo-box"><a href="{{route('register')}}" class="logo-text">Daftar Akun</a></div>
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-group">
                                         <input type="text" id="name" name="name"
                                             class="form-control @error('name') is-invalid @enderror"
                                             value="{{ old('name') }}" aria-describedby="emailHelp"
-                                            placeholder="Enter name">
+                                            placeholder="Masukkan Nama">
 
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
                                         <input type="email" id="email" name="email"
                                             class="form-control @error('email') is-invalid @enderror"
                                             value="{{ old('email') }}" aria-describedby="emailHelp"
-                                            placeholder="Enter email">
+                                            placeholder="Masukkan Email">
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -80,7 +80,7 @@
                                     <div class="form-group">
                                         <input type="password"
                                             class="form-control @error('password') is-invalid @enderror" name="password"
-                                            id="password" placeholder="Password">
+                                            id="password" placeholder="Masukkan Password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -90,7 +90,7 @@
                                     <div class="form-group">
                                         <input type="password"
                                             class="form-control @error('password') is-invalid @enderror" name="password_confirmation"
-                                            id="password_confirmation" placeholder="Password Confirm" required autocomplete="new-password">
+                                            id="password_confirmation" placeholder="Konfirmasi Password" required autocomplete="new-password">
                                         @error('password_confirmation')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -134,7 +134,7 @@
                                         <input type="text" id="postcode" name="postcode"
                                             class="form-control @error('postcode') is-invalid @enderror"
                                             value="{{ old('postcode') }}" aria-describedby="emailHelp"
-                                            placeholder="Enter postcode">
+                                            placeholder="Masukkan Kodepos">
 
                                         @error('postcode')
                                             <span class="invalid-feedback" role="alert">
@@ -146,7 +146,7 @@
                                         <input type="text" id="address" name="address"
                                             class="form-control @error('address') is-invalid @enderror"
                                             value="{{ old('address') }}" aria-describedby="emailHelp"
-                                            placeholder="Enter address">
+                                            placeholder="Masukkan Alamat">
 
                                         @error('address')
                                             <span class="invalid-feedback" role="alert">
@@ -158,7 +158,7 @@
                                         <input type="text" id="phone" name="phone"
                                             class="form-control @error('phone') is-invalid @enderror"
                                             value="{{ old('phone') }}" aria-describedby="emailHelp"
-                                            placeholder="Enter phone">
+                                            placeholder="Masukkan Nomor Hp">
 
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
@@ -170,9 +170,9 @@
                                     <div class="auth-options">
                                         <div class="custom-control custom-checkbox form-group">
                                             <input type="checkbox" class="custom-control-input" id="exampleCheck1">
-                                            <label class="custom-control-label" for="exampleCheck1">Remember me</label>
+                                            <label class="custom-control-label" for="exampleCheck1">Ingat Saya</label>
                                         </div>
-                                        <a href="#" class="forgot-link">Forgot Password?</a>
+                                        {{-- <a href="#" class="forgot-link">Forgot Password?</a> --}}
                                     </div>
                                 </form>
                                 <div class="text-center">

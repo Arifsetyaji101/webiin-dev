@@ -8,9 +8,9 @@
             <button class="ltn__utilize-close">×</button>
         </div>
         <div class="ltn__utilize-menu-search-form">
-            <form action="#">
-                <input type="text" placeholder="Search...">
-                <button><i class="fas fa-search"></i></button>
+            <form method="get" action="{{ url('/shop') }}">
+                <input type="text" name="search" placeholder="Cari Template" style="border-radius:15px" value="{{ $search ?? '' }}">
+                <button type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
         <div class="ltn__utilize-menu">
@@ -31,9 +31,9 @@
                 @auth
                     <li>
                         <a href="{{route('member.dashboard')}}" title="My Account">
-                            <span class="utilize-btn-icon">
+                            {{-- <span class="utilize-btn-icon">
                                 <i class="far fa-user"></i>
-                            </span>
+                            </span> --}}
                             My Account
                         </a>
                     </li>

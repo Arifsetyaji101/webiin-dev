@@ -109,7 +109,7 @@ class HomeController extends Controller
             return $q['qty'] * $q['price'];
         });
         $company = $this->companyProfile->getAll();
-        $breadcrumb = 'About';
+        $breadcrumb = 'Tentang Kami';
         return view('home.pages.about.index',compact('company','cart','subtotal','breadcrumb','count_cart'));
     }
 

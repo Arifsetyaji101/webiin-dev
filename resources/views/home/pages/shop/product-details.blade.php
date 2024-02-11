@@ -43,11 +43,15 @@
                                     @endif
                                 </div>
                                 <div class="modal-product-meta ltn__product-details-menu-1">
+                                    <strong class="p-0 m-0">Rating</strong>
                                     <ul>
                                         <li>
-                                            <strong>Reting:</strong>
                                             <div class="product-ratting">
-                                                <ul>
+                                                <ul style="
+                                                    margin: 0 !important;
+                                                    padding:0 !important;
+                                                    
+                                                    ">
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
                                                     <li><a href="#"><i class="fas fa-star"></i></a></li>
@@ -60,7 +64,7 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <strong>Info Produk:</strong>
+                                    <strong class="p-0 ">Deskripsi</strong>
                                     <div>
                                         <p>{!!$detail->short_description!!}</p>
                                         {{-- <ul>
@@ -80,19 +84,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr>
+
                         </div>
                         <div class="col-md-3">
                             <div class="modal-product-info shop-details-info pl-0"
                                 style="border: 2px solid; border-radius:15px;border-color:rgb(209, 209, 209)">
-
-                                <hr>
-                                <div class="modal-product-meta ltn__product-details-menu-1">
+                                <div class="modal-product-meta ltn__product-details-menu-1 pt-4">
                                     <ul>
-                                        <li>
-                                            <strong>Categories:</strong>
+                                        <li >
+                                            <strong>Kategori :</strong>
                                             <span>
-                                                <a href="#">{{$detail->category->name}}</a>
+                                                {{$detail->category->name}}
                                             </span>
                                         </li>
                                     </ul>
@@ -123,17 +125,13 @@
                                         </ul>
                                     </form>
                                 </div>
-                                <div class="">
+                                <div class="pb-4">
                                     @if ($detail->link)
-                                    <a href="{{$detail->link}}" target="_blank" class="">
-                                        <button class="btn theme-btn-5 btn-effect-2">Demo</button>
-                                        {{-- <button class="theme-btn-5 btn-preview  btn-effect-1 block">Demo</button>
-                                        --}}
-
+                                    <a href="{{$item->link}}" target="_blank" class="theme-btn-2 btn btn-effect-2 mt-3">
+                                        Demo
                                     </a>
                                     @endif
                                 </div>
-                                <hr>
                             </div>
                         </div>
                     </div>
@@ -303,8 +301,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title-area ltn__section-title-2">
-                    <h6 class="section-subtitle ltn__secondary-color">// {{$detail->category->name}} </h6>
-                    <h1 class="section-title">Related Products<span>.</span></h1>
+                    <h6 class="section-subtitle ltn__secondary-color">Kategori : {{$detail->category->name}} </h6>
+                    <h1 class="section-title fs-1">Template Terkait</h1>
                 </div>
             </div>
         </div>
@@ -317,11 +315,11 @@
                         <a href="{{route('product.detail',$item->slug)}}"><img
                                 src="{{$item->productImages->first()->image ?? ''}}" alt="#"
                                 style="height: 200px; width:300px;  object-fit:cover; border-radius:15px; "></a>
-                        <div class="product-badge">
+                        {{-- <div class="product-badge">
                             <ul>
                                 <li class="sale-badge">New</li>
                             </ul>
-                        </div>
+                        </div> --}}
                         <div class="product-hover-action">
                             <ul>
                                 <li>
@@ -337,7 +335,7 @@
                         <h2 class="product-title"><a href="{{route('product.detail',$item->slug)}}">{{$item->title}}</a>
                         </h2>
                         <div class="product-price">
-                            <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Rp
+                            <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
                                 @currency($item->price)</span>
                             @if ($item->price_coret)
                             <del style="color:rgb(62, 61, 61); font-size:14px">@currency($item->price_coret)</del>
@@ -375,7 +373,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close bg-transparent" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         <!-- <i class="fas fa-times"></i> -->
                     </button>

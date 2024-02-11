@@ -5138,10 +5138,6 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   transition: all 0.3s ease 0s;
   text-align: center;
 }
-.menu-product-item .product-info {
-  padding: 25px 15px 15px;
-  padding-top: 0;
-}
 .menu-product-item .product-title {
   font-size: 16px;
   margin-bottom: 5px;
@@ -6063,7 +6059,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   stroke-width: 30px;
 }
 
-.mobile-menu-toggle svg path#top, .mobile-menu-toggle svg path#bottom {
+.mobile-menu-toggle svg path#top,
+.mobile-menu-toggle svg path#bottom {
   stroke-dasharray: 240px 950px;
 }
 
@@ -6071,7 +6068,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   stroke-dasharray: 240px 240px;
 }
 
-.mobile-menu-toggle .close svg path#top, .mobile-menu-toggle .close svg path#bottom {
+.mobile-menu-toggle .close svg path#top,
+.mobile-menu-toggle .close svg path#bottom {
   stroke-dasharray: -650px;
   stroke-dashoffset: -650px;
 }
@@ -8456,22 +8454,26 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   line-height: 50px;
 }
 
-.product-meta-date input[type=date]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.product-meta-date input[type=date]::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: pink;
   line-height: 50px;
 }
 
-.product-meta-date input[type=date]::-moz-placeholder { /* Firefox 19+ */
+.product-meta-date input[type=date]::-moz-placeholder {
+  /* Firefox 19+ */
   color: pink;
   line-height: 50px;
 }
 
-.product-meta-date input[type=date]:-ms-input-placeholder { /* IE 10+ */
+.product-meta-date input[type=date]:-ms-input-placeholder {
+  /* IE 10+ */
   color: pink;
   line-height: 50px;
 }
 
-.product-meta-date input[type=date]:-moz-placeholder { /* Firefox 18- */
+.product-meta-date input[type=date]:-moz-placeholder {
+  /* Firefox 18- */
   color: pink;
   line-height: 50px;
 }

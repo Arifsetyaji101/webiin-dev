@@ -1,6 +1,7 @@
 @extends('home.layouts.layout-pages')
 @section('content')
 <!-- SHOPING CART AREA START -->
+
 <div class="liton__shoping-cart-area mb-120">
     <div class="container">
         <div class="row">
@@ -9,7 +10,7 @@
                     <div class="modal-dialog modal-md" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close bg-transparent" data-bs-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -20,7 +21,7 @@
                                             <div class="col-12">
                                                  <div class="modal-product-info">
                                                     <h5>Peringatan</h5>
-                                                    <p class="added-cart"><i class="fa fa-times-circle"></i> Anda belum menambahkan domain</p>
+                                                    <p class="added-cart"><i class="fa fa-times-circle text-danger"></i> Anda belum menambahkan domain</p>
                                                     
                                                  </div>
                                             </div>
@@ -126,7 +127,7 @@
                                     <tr class="cart-coupon-row">
                                         <td>
                                             <button type="submit" class="btn theme-btn-2 btn-effect-2"
-                                                id="update_cart">Update Cart</button>
+                                                id="update_cart">Update Keranjang</button>
                                         </td>
                                     </tr>
                                 </tbody>

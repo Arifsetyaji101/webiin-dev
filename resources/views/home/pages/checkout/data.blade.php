@@ -91,7 +91,7 @@
                                                         <div class="row">
                                                             <div class="col-md-8 col-12">
                                                                 <input type="text" name="code" id="code_coupon"
-                                                                    placeholder="Coupon code"
+                                                                    placeholder="Masukkan Kupon"
                                                                     style="border-radius: 15px">
                                                             </div>
                                                             <div class="col-md-4 col-12">
@@ -192,7 +192,7 @@
                             </div>
 
                             <div>
-                                <p>Saya menyatakan telah menyetujui SLA, AUP, Perjanjian Layanan Web Hosting, dan
+                                <p class="text-center">Saya menyatakan telah menyetujui SLA, AUP, Perjanjian Layanan Web Hosting, dan
                                     Kebijakan
                                     Privasi.</p>
                             </div>
