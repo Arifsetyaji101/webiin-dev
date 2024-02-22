@@ -36,41 +36,43 @@
                 <div class="card-body">
                     <h5 class="card-title">Data Client</h5>
                     <br>
-                    <table id="zero-conf" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Logo</th>
-                                <th>Alamat</th>
-                                <th>Link</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($client as $item)
+                    <div class="table-responsive">
+                        <table id="zero-conf" class="display" style="width:100%">
+                            <thead>
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td><img src="{{$item->logo}}" width="100" height="100" alt=""></td>
-                                    <td>{{$item->address}}</td>
-                                    <td>{{$item->link}}</td>
-                                    <td>
-                                        <a href="{{route('client-company.edit',$item->id)}}" class="btn btn-secondary">Edit</a>
-                                        <form action="{{ route('client-company.destroy',$item->id) }}" method="POST" style="display: inline-block;">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger" value="Delete"
-                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
-                                                 Hapus
-                                            </button>
-                                        </form>
-                                    </td>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Logo</th>
+                                    <th>Alamat</th>
+                                    <th>Link</th>
+                                    <th>Aksi</th>
                                 </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($client as $item)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$item->name}}</td>
+                                        <td><img src="{{$item->logo}}" width="100" height="100" alt=""></td>
+                                        <td>{{$item->address}}</td>
+                                        <td>{{$item->link}}</td>
+                                        <td>
+                                            <a href="{{route('client-company.edit',$item->id)}}" class="btn btn-secondary">Edit</a>
+                                            <form action="{{ route('client-company.destroy',$item->id) }}" method="POST" style="display: inline-block;">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger" value="Delete"
+                                                    onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
+                                                     Hapus
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

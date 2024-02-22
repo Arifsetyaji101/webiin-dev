@@ -10,14 +10,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use App\Helpers\CartCookie;
+use App\Service\CompanyProfileService;
 
 class CartController extends Controller
 {
     protected $getCoupon;
+    protected $companyProfile;
 
-    public function __construct(CouponService $getCoupon)
+    public function __construct(CouponService $getCoupon, CompanyProfileService $companyProfile)
     {
         $this->getCoupon = $getCoupon;
+        $this->companyProfile = $companyProfile;
+
     }
 
     public function index()
@@ -30,7 +34,8 @@ class CartController extends Controller
         });
         $breadcrumb = 'Keranjang';
         $count_cart = $cartHelper->getTotalCart();
-        return view('home.pages.cart.index',compact('cart', 'subtotal','breadcrumb','count_cart'));
+        $company = $this->companyProfile->getAll();
+        return view('home.pages.cart.index',compact('cart', 'subtotal','breadcrumb','count_cart','company'));
     }
 
     public function addToCart(Request $request)

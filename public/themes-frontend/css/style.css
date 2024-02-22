@@ -17486,7 +17486,7 @@ input.cart-plus-minus-box {
 .footer-menu ul li a {
     position: relative;
 }
-.footer-menu ul li a::before {
+/* .footer-menu ul li a::before {
     position: absolute;
     content: "//";
     left: 0;
@@ -17501,10 +17501,10 @@ input.cart-plus-minus-box {
     visibility: hidden;
     margin-left: -20px;
     color: var(--ltn__secondary-color);
-}
-.footer-menu ul li:hover a {
+} */
+/* .footer-menu ul li:hover a {
     padding-left: 20px;
-}
+} */
 .footer-menu ul li:hover a::before {
     opacity: 1;
     visibility: visible;

@@ -35,6 +35,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Data Kategori</h5>
                         <br>
+                       <div class="table-responsive">
                         <table id="zero-conf" class="display" style="width:100%">
                             <thead>
                                 <tr>
@@ -118,6 +119,7 @@
 
                             </tbody>
                         </table>
+                       </div>
                     </div>
                 </div>
             </div>

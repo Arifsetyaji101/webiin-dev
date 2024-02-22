@@ -36,47 +36,49 @@
                 <div class="card-body">
                     <h5 class="card-title">Data Kupon</h5>
                     <br>
-                    <table id="zero-conf" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Kode</th>
-                                <th>Tipe</th>
-                                <th>Nilai Kupon</th>
-                                <th>Tanggal mulai</th>
-                                <th>Tanggal selesai</th>
-                                <th>Sudah digunakan</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($coupon as $item)
+                    <div class="table-responsive">
+                        <table id="zero-conf" class="display" style="width:100%">
+                            <thead>
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->code}}</td>
-                                    <td>{{$item->type}}</td>
-                                    <td>{{$item->discount_rate}}</td>
-                                    <td>{{$item->start_date}}</td>
-                                    <td>{{$item->end_date}}</td>
-                                    <td>{{$item->counter ?? '0'}}</td>
-                                    <td>
-                                        <a href="{{route('coupon.edit',$item->id)}}" class="btn btn-sm btn-secondary">Edit</a>
-                                        <form action="{{ route('coupon.destroy',$item->id) }}" method="POST" style="display: inline-block;">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-sm btn-danger" value="Delete"
-                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
-                                                 Hapus
-                                            </button>
-                                        </form>
-                                    </td>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Kode</th>
+                                    <th>Tipe</th>
+                                    <th>Nilai Kupon</th>
+                                    <th>Tanggal mulai</th>
+                                    <th>Tanggal selesai</th>
+                                    <th>Sudah digunakan</th>
+                                    <th>Aksi</th>
                                 </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($coupon as $item)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$item->name}}</td>
+                                        <td>{{$item->code}}</td>
+                                        <td>{{$item->type}}</td>
+                                        <td>{{$item->discount_rate}}</td>
+                                        <td>{{$item->start_date}}</td>
+                                        <td>{{$item->end_date}}</td>
+                                        <td>{{$item->counter ?? '0'}}</td>
+                                        <td>
+                                            <a href="{{route('coupon.edit',$item->id)}}" class="btn btn-sm btn-secondary">Edit</a>
+                                            <form action="{{ route('coupon.destroy',$item->id) }}" method="POST" style="display: inline-block;">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger" value="Delete"
+                                                    onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
+                                                     Hapus
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

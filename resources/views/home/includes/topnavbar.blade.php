@@ -21,16 +21,13 @@
     <!-- ltn__header-top-area end -->
 
     <!-- ltn__header-middle-area start -->
-    <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white ltn__logo-right-menu-option">
-        <div class="container">
+    <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-white ltn__logo-right-menu-option pt-md-3 pt-3">
+        <div class="container-fluid">
             <div class="d-flex align-items-md-center justify-content-between align-items-sm-start">
                 <div class="">
                     <div class="">
                         <a href="{{route('home')}}"> 
-                            {{-- <img src="{{ $company->logo ?? '' }}" alt="Logo"> --}}
-                        
-                            <img src="https://toko.webiin.com/storage/image/company_profile/logo/2023/logo.png" alt=""
-                                class="">
+                            <img src="{{ $company->logo ?? '' }}" alt="Logo">
                         </a>
 
                     </div>
@@ -105,19 +102,19 @@
                                 <a href="#" class="no-style"><i class="icon-user"></i></a>
                                 <ul style="border-radius: 15px">
                                     @guest
-                                    <li><a href="{{ route('login') }}" class="bg-[#124238]">Masuk</a></li>
-                                    <li><a href="{{ route('register') }}">Daftar</a></li>
+                                    <li><a href="{{ route('login') }}" class="text-hover-webiin">Masuk</a></li>
+                                    <li><a href="{{ route('register') }}" class="text-hover-webiin">Daftar</a></li>
                                     @endguest
                                     @auth
-                                    <li><a href="{{ route('member.dashboard') }}">{{ Auth::user()->name }}</a></li>
+                                    <li><a href="{{ route('member.dashboard') }}" class="text-hover-webiin">{{ Auth::user()->name }}</a></li>
                                     @if (auth::user()->role == 'admin')
-                                    <li><a href="{{ route('admin.dashboard') }}">Akun Saya</a></li>
+                                    <li><a href="{{ route('admin.dashboard') }}" class="text-hover-webiin">Akun Saya</a></li>
                                     @else
-                                    <li><a href="{{ route('member.dashboard') }}">Akun Saya</a></li>
+                                    <li><a href="{{ route('member.dashboard') }}" class="text-hover-webiin">Akun Saya</a></li>
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">Keluar</a>
+                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="text-hover-webiin">Keluar</a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                             @csrf
                                         </form>
@@ -131,7 +128,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <div class="mobile-menu-toggle d-md-none ">
+                    <div class="mobile-menu-toggle d-md-none">
                         
                         <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle shadow-none">
                             <svg viewBox="0 0 800 600">
@@ -161,9 +158,9 @@
                         <nav>
                             <div class="ltn__main-menu">
                                 <ul>
-                                    <li><a href="{{ route('home') }}" class="text-[#324234]">Home</a></li>
-                                    <li><a href="{{ route('shop.index') }}">Template</a></li>
-                                    <li><a href="{{ route('home.about') }}">Cara Order</a></li>
+                                    <li><a href="{{ route('home') }}" class="text-hover-webiin">Home</a></li>
+                                    <li><a href="{{ route('shop.index') }}" class="text-hover-webiin">Template</a></li>
+                                    <li><a href="{{ route('home.about') }}" class="text-hover-webiin">Cara Order</a></li>
                                     {{-- <li class="menu-icon"><a href="{{ route('home') }}">Service</a></li>
                                     <li><a href="{{ route('home') }}">Portofolio</a></li>
                                     <li><a href="contact.html">Contact</a></li> --}}

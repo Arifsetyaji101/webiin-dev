@@ -208,9 +208,10 @@ class HomeController extends Controller
         $tags       = explode(',', $detailBlog->tags);
         $category   = $this->categoryService->getCategoryArticle();
         $related    = $this->articleService->relatedPost($detailBlog->category_id);
+        $company = $this->companyProfile->getAll();
         $breadcrumb = 'Detail Blog';
         // dd($tags);
-        return view('home.pages.blog.details',compact('detailBlog','cart','subtotal','category','related','breadcrumb','count_cart','tags','popularView'));
+        return view('home.pages.blog.details',compact('detailBlog','cart','subtotal','category','related','breadcrumb','count_cart','tags','popularView', 'company'));
     }
 
     public function pageError()

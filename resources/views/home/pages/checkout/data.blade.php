@@ -2,7 +2,7 @@
 @section('content')
 <!-- WISHLIST AREA START -->
 <div class="ltn__checkout-area mb-105">
-    <div class="container">
+    <div class="container-fluid">
         @guest
         <div class="row">
             <div class="col-lg-12">
@@ -96,8 +96,8 @@
                                                             </div>
                                                             <div class="col-md-4 col-12">
                                                                 <button type="button" id="btn_coupon"
-                                                                    class="btn btn-white btn-effect-2 text-uppercase">
-                                                                    Kupon</button>
+                                                                    class="btn btn-white text-white bg-webiin hover-webiin text-uppercase">
+                                                                    Gunakan</button>
                                                             </div>
                                                         </div>
                                                     </div>

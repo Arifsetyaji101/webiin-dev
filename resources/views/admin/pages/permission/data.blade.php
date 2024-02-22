@@ -38,35 +38,37 @@
                 <div class="card-body">
                     <h5 class="card-title">Data Permission</h5>
                     <br>
-                    <table id="zero-conf" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($permission as $item)
+                    <div class="table-responsive">
+                        <table id="zero-conf" class="display" style="width:100%">
+                            <thead>
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>
-                                        <a href="{{route('client-company.edit',$item->id)}}" class="btn btn-secondary">Edit</a>
-                                        <form action="{{ route('client-company.destroy',$item->id) }}" method="POST" style="display: inline-block;">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger" value="Delete"
-                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
-                                                 Hapus
-                                            </button>
-                                        </form>
-                                    </td>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Aksi</th>
                                 </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($permission as $item)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$item->name}}</td>
+                                        <td>
+                                            <a href="{{route('client-company.edit',$item->id)}}" class="btn btn-secondary">Edit</a>
+                                            <form action="{{ route('client-company.destroy',$item->id) }}" method="POST" style="display: inline-block;">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger" value="Delete"
+                                                    onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
+                                                     Hapus
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

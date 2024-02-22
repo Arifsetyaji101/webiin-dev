@@ -34,10 +34,13 @@
                                 <h4 class="text-uppercase text-end mt-4 mb-2">invoice</h4>
                                 <h6 class="text-end mb-3 pb-4"># {{$detail->code}}</h6>
                                 @if ($detail->transaction_status !== "SUCCESS")
-                                    <h3 class="text-end pb-4 mt-3">{{$detail->transaction_status}}</h3>
+                                    <h3 class="text-end pb-4 mt-3">
+                                        <div class="badge badge-warning">{{$detail->transaction_status}}</div>
+                                    </h3>
                                     <button type="button" id="pay-button" class="btn btn-success">Bayar</button>
                                 @else
-                                    <h3 class="text-end pb-4 mt-3">SUDAH DIBAYAR</h3>
+                                    <h3 class="text-end pb-4 mt-3">
+                                        <div class="badge badge-success">SUDAH DIBAYAR</div></h3>
                                 @endif
                                 {{-- <p class="text-end mb-1 mt-2">Balance Due</p>
                                 <h4 class="text-end fw-normal">@currency($sumtotal)</h4>

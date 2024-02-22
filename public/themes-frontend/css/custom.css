@@ -10,8 +10,76 @@
 
 .btn-product {
   display: inline-block !important;
-  display: inline-block;
-  padding: 5px 10px !important;
+  padding: 2px 10px !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  background: linear-gradient(90deg, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
+}
+.btn-product:hover {
+  background: linear-gradient(90deg, #4797b0 0, #4da9bd 48%, #4dbd92 100%) !important;
+}
+
+.theme-btn-2 {
+  background: linear-gradient(90deg, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
+}
+
+.theme-btn-7 {
+  background: rgb(239, 131, 51);
+  background: linear-gradient(90deg, rgb(239, 131, 51) 59%, rgb(255, 201, 44) 100%);
+}
+
+.bg-webiin-2 {
+  background: rgb(239, 131, 51);
+  background: linear-gradient(90deg, rgb(239, 131, 51) 59%, rgb(255, 201, 44) 100%);
+}
+
+.text-webiin {
+  background-image: linear-gradient(90deg, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-hover-webiin:hover {
+  background-image: linear-gradient(90deg, #4797b0 0, #4da9bd 48%, #4dbd92 100%) !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-webiin {
+  background-image: linear-gradient(90deg, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
+}
+
+.hover-webiin:hover {
+  background: linear-gradient(90deg, #4797b0 0, #4da9bd 48%, #4dbd92 100%) !important;
+}
+
+.slick-arrow {
+  border-color: none;
+}
+.slick-arrow:hover {
+  background: linear-gradient(90deg, #4797b0 0, #4da9bd 48%, #4dbd92 100%) !important;
+  border-color: none;
+  border: none !important;
+}
+
+a#scrollUp:hover {
+  background: linear-gradient(90deg, #4797b0 0, #4da9bd 48%, #4dbd92 100%) !important;
+  border-color: none;
+  border: none !important;
+}
+
+.ltn__feature-item-6.box-shadow-1.active:before {
+  background: linear-gradient(to right, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
+}
+
+.ltn__product-item .product-info h2 a {
+  text-decoration: none !important;
+}
+.ltn__product-item .product-info h2 a:hover {
+  color: #0c1e33;
+  text-decoration: none !important;
 }
 
 .slick-arrow {
@@ -42,7 +110,7 @@ header .ltn__header-middle-area .btn-search input {
   border-radius: 5px 0px 0px 5px !important;
 }
 header .ltn__header-middle-area .btn-search button {
-  background-color: #0095ff;
+  background: linear-gradient(90deg, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
   height: 40px;
   padding: 0 7px;
   border-radius: 0px 5px 5px 0px !important;
@@ -59,12 +127,16 @@ header .ltn__header-middle-area .btn-search button i {
   margin: auto;
 }
 .ltn__slider-area .slick-list {
-  border-radius: 15px;
+  border-radius: 10px;
+}
+.ltn__slider-area .ltn__slide-item {
+  width: 1224px;
+  height: 400px !important;
 }
 
 .ltn__feature-area .ltn__feature-item {
   background: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -80,10 +152,9 @@ header .ltn__header-middle-area .btn-search button i {
 
 .ltn__team-area .ltn__team-item {
   background: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   flex-direction: column;
-  height: 100%;
   position: relative;
   transition: translate 0.18s, box-shadow 0.18s;
 }
@@ -92,21 +163,48 @@ header .ltn__header-middle-area .btn-search button i {
   top: -1px;
 }
 
+.ltn__about-us-area .accordion .accordion-item:first-child {
+  border-radius: 10px 10px 0 0;
+}
+.ltn__about-us-area .accordion .accordion-item:first-child .accordion-button {
+  border-radius: 10px 10px 0 0;
+}
+.ltn__about-us-area .accordion .accordion-item:last-child {
+  border-radius: 0 0 10px 10px;
+}
+.ltn__about-us-area .accordion .accordion-item:last-child .accordion-button {
+  border-radius: 0;
+}
+.ltn__about-us-area .accordion .accordion-item:last-child .accordion-button.collapsed {
+  border-radius: 0 0 10px 10px !important;
+}
+
+.ltn__blog-area .slick-slider .slick-list .slick-slide .ltn__blog-item .ltn__blog-img {
+  border-radius: 10px 10px 0 0;
+}
+.ltn__blog-area .slick-slider .slick-list .slick-slide .ltn__blog-item .ltn__blog-brief {
+  border-radius: 0 0 10px 10px;
+}
+.ltn__blog-area .slick-slider .slick-arrow {
+  display: flex;
+}
+
 .sidebar.ltn__shop-sidebar {
   position: sticky;
   top: 175px;
 }
 .sidebar .widget form button {
-  border-radius: 0 15px 15px 0;
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(90deg, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
 }
 .sidebar .widget form button:hover {
-  background-color: #0095ff;
+  background: linear-gradient(90deg, #1488c9 0, #5fa7d0 48%, #669bda 100%) !important;
   border: none;
 }
 
 .ltn__product-area .ltn__product-item {
   background: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   position: relative;
@@ -117,7 +215,7 @@ header .ltn__header-middle-area .btn-search button i {
   top: -1px;
 }
 .ltn__product-area .ltn__product-item .product-img {
-  border-radius: 15px;
+  border-radius: 10px 10px 0 0;
 }
 .ltn__product-area .ltn__product-item .product-info .product-brief p {
   margin: 0;
@@ -128,10 +226,13 @@ header .ltn__header-middle-area .btn-search button i {
   padding: 0 !important;
   margin: 0 !important;
 }
+.ltn__shop-details-area .ltn__shop-details-inner .slick-arrow {
+  display: flex;
+}
 
 .ltn__product-slider-area .ltn__product-item {
   background: #fff;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   position: relative;
@@ -142,15 +243,75 @@ header .ltn__header-middle-area .btn-search button i {
   top: -1px;
 }
 .ltn__product-slider-area .ltn__product-item .product-img {
-  border-radius: 15px;
+  border-radius: 10px 10px 0 0;
 }
 .ltn__product-slider-area .ltn__product-item .product-img .product-hover-action a {
-  border-radius: 15px;
+  border-radius: 10px;
+}
+.ltn__product-slider-area .ltn__product-item .product-img .product-hover-action a:hover {
+  background: linear-gradient(90deg, #4797b0 0, #4da9bd 48%, #4dbd92 100%) !important;
+  border-color: none;
+  border: none !important;
 }
 .ltn__product-slider-area .slick-arrow {
   display: flex !important;
 }
+.ltn__product-slider-area .slick-arrow.slick-prev {
+  left: 0 !important;
+}
+.ltn__product-slider-area .slick-arrow.slick-next {
+  right: 0 !important;
+}
 
 .ltn__modal-area .modal .modal-content {
-  border-radius: 15px !important;
+  border-radius: 10px !important;
+}
+
+.ltn__page-details-area .ltn__blog-details-wrap {
+  border-radius: 10px;
+}
+.ltn__page-details-area .ltn__blog-details-wrap .ltn__blog-category a {
+  border-radius: 10px !important;
+}
+.ltn__page-details-area .ltn__blog-details-wrap .ltn__blog-title {
+  white-space: normal;
+  word-break: break-all;
+}
+.ltn__page-details-area .ltn__blog-details-wrap .related-post-area .ltn__blog-item {
+  border-radius: 10px;
+}
+.ltn__page-details-area .ltn__blog-details-wrap .related-post-area .ltn__blog-item .ltn__blog-img img {
+  border-radius: 10px 10px 0 0 !important;
+}
+.ltn__page-details-area .blog-sidebar .ltn__popular-post-widget,
+.ltn__page-details-area .blog-sidebar .ltn__menu-widget,
+.ltn__page-details-area .blog-sidebar .ltn__tagcloud-widget {
+  border-radius: 10px !important;
+}
+
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #1f2128;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 1s ease-in-out;
+}
+.loader .spinner-grow {
+  top: 50%;
+  left: 50%;
+  margin: -13px 0 0 -13px;
+  position: absolute;
+}
+.loader .spinner-grow.text-primary {
+  color: #56c4b6 !important;
+}
+
+.no-loader .loader {
+  visibility: hidden;
+  opacity: 0;
 }/*# sourceMappingURL=custom.css.map */

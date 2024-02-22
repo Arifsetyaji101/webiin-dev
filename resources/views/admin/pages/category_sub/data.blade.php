@@ -36,55 +36,57 @@
                 <div class="card-body">
                     <h5 class="card-title">Data Kategori</h5>
                     <br>
-                    <table id="zero-conf" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Kategori</th>
-                                <th>Tipe Kategori</th>
-                                <th>Gambar Kategori</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($subcategory as $item)
+                    <div class="table-responsive">
+                        <table id="zero-conf" class="display" style="width:100%">
+                            <thead>
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->type}}</td>
-                                    <td><img src="{{$item->image}}" width="100" height="100" alt=""></td>
-                                    <td>
-                                        <a href="{{route('category.edit',$item->id)}}" class="btn btn-sm btn-secondary">Edit</a>
-                                        <form action="{{ route('category.destroy',$item->id) }}" method="POST" style="display: inline-block;">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-sm btn-danger" value="Delete"
-                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
-                                                 Hapus
-                                            </button>
-                                        </form>
-                                        <a href="#"
-                                            class="btn btn-sm btn-primary"
-                                            data-toggle="modal"
-                                            id="btnModalSub"
-                                            data-target="#exampleModal"
-                                            data-title="Peringatan"
-                                            {{-- data-id="{{$item->id}}" --}}
-                                            data-remote="{{ route('subcategory.show', $item->id) }}">
-                                            + Sub
-                                        </a>
-
-                                        {{-- <a data-href="" type="button" class="btn btn-primary" id="btnModalSub" data-toggle="modal" data-target="#exampleModal" data-id="{{$item->id}}"> --}}
-                                        {{-- <button type="button" class="btn btn-primary btnModalSub" id="btnModalSub"> --}}
-                                            {{-- + Sub
-                                        </button> --}}
-                                    </td>
+                                    <th>No</th>
+                                    <th>Nama Kategori</th>
+                                    <th>Tipe Kategori</th>
+                                    <th>Gambar Kategori</th>
+                                    <th>Aksi</th>
                                 </tr>
-                                
-                            @endforeach
-
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($subcategory as $item)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$item->name}}</td>
+                                        <td>{{$item->type}}</td>
+                                        <td><img src="{{$item->image}}" width="100" height="100" alt=""></td>
+                                        <td>
+                                            <a href="{{route('category.edit',$item->id)}}" class="btn btn-sm btn-secondary">Edit</a>
+                                            <form action="{{ route('category.destroy',$item->id) }}" method="POST" style="display: inline-block;">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger" value="Delete"
+                                                    onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
+                                                     Hapus
+                                                </button>
+                                            </form>
+                                            <a href="#"
+                                                class="btn btn-sm btn-primary"
+                                                data-toggle="modal"
+                                                id="btnModalSub"
+                                                data-target="#exampleModal"
+                                                data-title="Peringatan"
+                                                {{-- data-id="{{$item->id}}" --}}
+                                                data-remote="{{ route('subcategory.show', $item->id) }}">
+                                                + Sub
+                                            </a>
+    
+                                            {{-- <a data-href="" type="button" class="btn btn-primary" id="btnModalSub" data-toggle="modal" data-target="#exampleModal" data-id="{{$item->id}}"> --}}
+                                            {{-- <button type="button" class="btn btn-primary btnModalSub" id="btnModalSub"> --}}
+                                                {{-- + Sub
+                                            </button> --}}
+                                        </td>
+                                    </tr>
+                                    
+                                @endforeach
+    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

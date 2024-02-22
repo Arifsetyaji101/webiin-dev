@@ -72,38 +72,50 @@
                         <h5 class="card-title">Invoice
                         </h5>
                         <br>
-                        <table id="zero-conf" class="display" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Jatuh Tempo </th>
-                                    <th>No Invoice </th>
-                                    <th>Jumlah</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse ($listTransaction as $item)
+                        <div class="table-responsive">
+                            <table id="zero-conf" class="display" style="width:100%">
+                                <thead>
                                     <tr>
-                                        <td>{{$item->created_at}}</td>
-                                        <td>{{$item->code}}</td>
-                                        <td>{{$item->transaction_total}}</td>
-                                        <td>{{$item->transaction_status}}</td>
-                                        <td>
-                                            <a href="{{route('member.detail.transaction',$item->code)}}" class="btn btn-primary">Bayar</a>
-                                        </td>
+                                        <th>Jatuh Tempo </th>
+                                        <th>No Invoice </th>
+                                        <th>Jumlah</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
-                                @empty
-                                    <tr>
-                                        <td>Tidak ada invoice</td>
-                                    </tr>
-                                @endforelse
-                                {{-- @foreach ($data as $item) --}}
-                                
-                                {{-- @endforeach --}}
-
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @forelse ($listTransaction as $item)
+                                        <tr>
+                                            <td>{{$item->created_at}}</td>
+                                            <td>{{$item->code}}</td>
+                                            <td>{{$item->transaction_total}}</td>
+                                            <td class="text-center">
+                                                @if ($item->transaction_status == 'PENDING')
+                                                <div><span class="badge badge-warning">{{$item->transaction_status}}</span></div>
+                                                @elseif($item->transaction_status == 'SUCCESS')
+                                                <div><span class="badge badge-success">{{$item->transaction_status}}</span></div>
+                                                @elseif($item->transaction_status == 'CANCEL')
+                                                <div><span class="badge badge-danger">{{$item->transaction_status}}</span></div>
+                                                @elseif($item->transaction_status == 'EXPIRED')
+                                                <div><span class="badge badge-danger">{{$item->transaction_status}}</span></div>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{route('member.detail.transaction',$item->code)}}" class="btn btn-primary">Bayar</a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td>Tidak ada invoice</td>
+                                        </tr>
+                                    @endforelse
+                                    {{-- @foreach ($data as $item) --}}
+                                    
+                                    {{-- @endforeach --}}
+    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -114,8 +126,12 @@
                         <hr>
                         @foreach ($article as $item)
                             <div class="card card-transactions">
-                                <div class="card-body">
-                                    <p>{{$item->titles}} <a target="_blank" href="{{ route('blog.detail', $item->slug) }}" class="btn btn-sm btn-secondary">lihat</a></p>
+                                <div class="card-body d-flex align-items-center justify-content-between ">
+                                    <p style="display: block;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;" class="m-0">{{$item->titles}} </p>
+                                    <a target="_blank" href="{{ route('blog.detail', $item->slug) }}" class="btn btn-sm btn-secondary">lihat</a>
                                 </div>
                             </div>
                         @endforeach
@@ -131,11 +147,11 @@
     <div class="col-lg-12">
         <div class="card card-transparent file-list recent-files">
             <div class="card-body">
-                <h5 class="card-title">Semua Produk dan Service</h5>
+                <h5 class="card-title">Produk Lainnya</h5>
                 <div class="row">
                     @foreach($popularProduct as $item)
                     <div class="col-lg-6 col-xl-3 col-6 mt-4">
-                        <div class="card file photo">
+                        <div class="card file photo" style="border-radius: 10px">
                             <div class="file-options dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -144,22 +160,27 @@
                                     <a class="dropdown-item" href="#">Add to Cart</a>
                                 </div>
                             </div>
-                            <div class=""> <img
+                            <div class=""> 
+                                <a href="{{route('product.detail',$item->slug)}}">
+                                    <img
                                     src="{{$item->productImages->count() ? $item->productImages->first()->image : ''}}"
-                                    alt="" style=" object-fit: cover; padding-top: 10px;" alt="" width="100%"
+                                    alt="" style=" object-fit: cover; border-radius:10px 10px 0 0" alt="" width="100%"
                                     height="200px">
+                                </a>
+
                             </div>
-                            <div class="card-body file-info">
+                            <div class="card-body file-info px-3 pt-0">
+                                <a href="{{route('product.detail',$item->slug)}}">
                                 <p style="display: block;
                                 white-space: nowrap;
                                 overflow: hidden;
-                                text-overflow: ellipsis;">{{$item->title}}</p>
-                                <span class="file-size">{{$item->price}}</span><br>
+                                text-overflow: ellipsis;" class="pt-3">{{$item->title}}</p>
+                                </a>
+                                <span class="file-size">Rp {{$item->price}}</span><br>
                                 <span class="file-date mt-3 " style="text-align: -webkit-center;">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#exampleModalCenter">
-                                        belum dibayar
-                                    </button>
+                                    <a href="{{route('product.detail',$item->slug)}}" class="btn btn-primary">
+                                            Detail
+                                    </a>
                                 </span>
                             </div>
                         </div>

@@ -12,7 +12,7 @@
                         <p>{{ $company->tagline ?? '' }}</p>
                         <div class="footer-address">
                             <ul>
-                                <li>
+                                <li class="text-hover-webiin">
                                     <div class="footer-address-icon">
                                         <i class="icon-placeholder"></i>
                                     </div>
@@ -20,20 +20,20 @@
                                         <p>{{ $company->address ?? '' }}</p>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="text-hover-webiin">
                                     <div class="footer-address-icon">
                                         <i class="icon-call"></i>
                                     </div>
                                     <div class="footer-address-info">
-                                        <p><a href="tel:+0123-456789">{{ $company->phone ?? '' }}</a></p>
+                                        <p><a href="tel:{{ $company->phone ?? '' }}">{{ $company->phone ?? '' }}</a></p>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="text-hover-webiin">
                                     <div class="footer-address-icon">
                                         <i class="icon-mail"></i>
                                     </div>
                                     <div class="footer-address-info">
-                                        <p><a href="mailto:example@example.com">{{ $company->email ?? '' }}</a></p>
+                                        <p><a href="mailto:{{ $company->email ?? '' }}">{{ $company->email ?? '' }}</a></p>
                                     </div>
                                 </li>
                             </ul>
@@ -53,9 +53,9 @@
                         <h4 class="footer-title">Webiin</h4>
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{ route('shop.index') }}">Template</a></li>
-                                <li><a href="{{ route('home.about') }}">Peertanyaan</a></li>
+                                <li><a class="text-hover-webiin" href="{{ route('home') }}">Home</a></li>
+                                <li><a class="text-hover-webiin" href="{{ route('shop.index') }}">Template</a></li>
+                                <li><a class="text-hover-webiin" href="{{ route('home.about') }}">Pertanyaan</a></li>
                             </ul>
                         </div>
                     </div>
@@ -65,9 +65,9 @@
                         <h4 class="footer-title">Layanan</h4>
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="{{route('shop.index')}}" disable>Pembuatan Website</a></li>
-                                <li><a href="" style="pointer-events: none"> Pembuatan Web Apps</a></li>
-                                <li><a href="" style="pointer-events: none"  >Aplikasi Mobile</a></li>
+                                <li><a class="text-hover-webiin" href="{{route('shop.index')}}" disable>Pembuatan Website</a></li>
+                                <li><a class="text-hover-webiin" href="" style="pointer-events: none"> Pembuatan Web Apps</a></li>
+                                <li><a class="text-hover-webiin" href="" style="pointer-events: none">Aplikasi Mobile</a></li>
                             </ul>
                         </div>
                     </div>
@@ -78,8 +78,8 @@
                         <div class="footer-menu">
                             <ul>
 
-                                <li><a href="{{ route('login') }}">Sign in</a></li>
-                                <li><a href="{{ route('register') }}">Register</a></li>
+                                <li><a href="{{ route('login') }}" class="text-hover-webiin">Sign in</a></li>
+                                <li><a href="{{ route('register') }}" class="text-hover-webiin">Register</a></li>
                                 {{-- <li><a href="#">Blog</a></li> --}}
                             </ul>
                         </div>
@@ -95,15 +95,13 @@
             </div>
         </div>
     </div>
-    <div class="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5">
+    <div class="ltn__copyright-area ltn__copyright-2 section-bg-7  plr--5 text-center">
         <div class="container-fluid ltn__border-top-2">
-            <div class="row">
-                <div class="col-md-6 col-12">
-                    <div class="ltn__copyright-design clearfix">
-                        <p>All Rights Reserved @ webiin.com <span class="current-year"></span></p>
-                    </div>
-                </div>
-                {{-- <div class="col-md-6 col-12 align-self-center">
+            <div class="ltn__copyright-design clearfix">
+                <p>All Rights Reserved by Webiin.com <span class="current-year"></span></p>
+            </div>
+            {{-- <div class="row">
+                <div class="col-md-6 col-12 align-self-center">
                     <div class="ltn__copyright-menu text-right text-end">
                         <ul>
                             <li><a href="#">Terms & Conditions</a></li>
@@ -111,8 +109,8 @@
                             <li><a href="#">Privacy & Policy</a></li>
                         </ul>
                     </div>
-                </div> --}}
-            </div>
+                </div>
+            </div> --}}
         </div>
     </div>
 </footer>

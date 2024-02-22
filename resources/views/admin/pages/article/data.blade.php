@@ -36,49 +36,51 @@
                 <div class="card-body">
                     <h5 class="card-title">Data Artikel</h5>
                     <br>
-                    <table id="zero-conf" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Thumbnail</th>
-                                <th>Status</th>
-                                <th>Kategori</th>
-                                <th>Dilihat</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($article as $item)
+                    <div class="table-responsive">
+                        <table id="zero-conf" class="display" style="width:100%">
+                            <thead>
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->titles}}</td>
-                                    <td><img src="{{$item->thumbnail}}" alt="" width="100" height="100"> </td>
-                                    <td>
-                                        @if ($item->status == '1')
-                                            <span class="badge badge-success">Publish</span>
-                                        @else
-                                            <span class="badge badge-danger">Draft</span>
-                                        @endif
-                                    </td>
-                                    <td>{{$item->category->name}}</td>
-                                    <td>{{$item->view}} kali</td>
-                                    <td>
-                                        <a href="{{route('article.edit',$item->id)}}" class="btn btn-secondary">Edit</a>
-                                        <form action="{{ route('article.destroy',$item->id) }}" method="POST" style="display: inline-block;">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger" value="Delete"
-                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
-                                                 Hapus
-                                            </button>
-                                        </form>
-                                    </td>
+                                    <th>No</th>
+                                    <th>Judul</th>
+                                    <th>Thumbnail</th>
+                                    <th>Status</th>
+                                    <th>Kategori</th>
+                                    <th>Dilihat</th>
+                                    <th>Aksi</th>
                                 </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($article as $item)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$item->titles}}</td>
+                                        <td><img src="{{$item->thumbnail}}" alt="" width="100" height="100"> </td>
+                                        <td>
+                                            @if ($item->status == '1')
+                                                <span class="badge badge-success">Publish</span>
+                                            @else
+                                                <span class="badge badge-danger">Draft</span>
+                                            @endif
+                                        </td>
+                                        <td>{{$item->category->name}}</td>
+                                        <td>{{$item->view}} kali</td>
+                                        <td>
+                                            <a href="{{route('article.edit',$item->id)}}" class="btn btn-secondary">Edit</a>
+                                            <form action="{{ route('article.destroy',$item->id) }}" method="POST" style="display: inline-block;">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger" value="Delete"
+                                                    onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
+                                                     Hapus
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

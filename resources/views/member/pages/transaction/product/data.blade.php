@@ -27,46 +27,68 @@
                 <div class="card-body">
                     <h5 class="card-title">Data Transaksi</h5>
                     <br>
-                    <table id="zero-conf" class="display" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Kode</th>
-                                <th>Produk</th>
-                                <th>Status</th>
-                                <th>Progress</th>
-                                <th>Qty</th>
-                                {{-- <th>Gambar</th> --}}
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($data as $item)
+                    <div class="table-responsive">
+                        <table id="zero-conf" class="display" style="width:100%">
+                            <thead>
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->code}}</td>
-                                    <td>{{$item->title}}</td>
-                                    <td>{{$item->transaction_status}}</td>
-                                    <td>{{$item->progress_status}}</td>
-                                    <td>{{$item->qty}}</td>
-                                    {{-- <td>{{$item->qty}}</td> --}}
-                                    <td>
-                                        <a href="{{route('product.mytransaction.detail',$item->code)}}" class="btn btn-secondary btn-sm">Detail</a>
-                                        {{-- <a href="{{route('member.detail.transaction',$item->id)}}" class="btn btn-primary">Bayar</a> --}}
-                                        {{-- <form action="{{ route('member.transaction',$item->id) }}" method="POST" style="display: inline-block;">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger" value="Delete"
-                                                onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
-                                                 Batalkan
-                                            </button>
-                                        </form> --}}
-                                    </td>
+                                    <th>No</th>
+                                    <th>Kode</th>
+                                    <th>Produk</th>
+                                    <th>Status</th>
+                                    <th>Progress</th>
+                                    <th>Qty</th>
+                                    {{-- <th>Gambar</th> --}}
+                                    <th>Aksi</th>
                                 </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $item)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$item->code}}</td>
+                                        <td>{{$item->title}}</td>
+                                        <td>
+                                            @if ($item->transaction_status == 'PENDING')
+                                            <div><span class="badge badge-warning">{{$item->transaction_status}}</span></div>
+                                            @elseif($item->transaction_status == 'SUCCESS')
+                                            <div><span class="badge badge-success">{{$item->transaction_status}}</span></div>
+                                            @elseif($item->transaction_status == 'CANCEL')
+                                            <div><span class="badge badge-danger">{{$item->transaction_status}}</span></div>
+                                            @elseif($item->transaction_status == 'EXPIRED')
+                                            <div><span class="badge badge-danger">{{$item->transaction_status}}</span></div>
+                                            @endif    
+                                        </td>
+                                        <td>
+                                            @if ($item->progress_status == 'Pending')
+                                            <div><span class="badge badge-warning">{{$item->progress_status}}</span></div>
+                                            @elseif($item->progress_status == 'Diterima')
+                                            <div><span class="badge badge-success">{{$item->progress_status}}</span></div>
+                                            @elseif($item->progress_status == 'Proses')
+                                            <div><span class="badge badge-primary">{{$item->progress_status}}</span></div>
+                                            @elseif($item->progress_status == 'Selesai')
+                                            <div><span class="badge badge-success">{{$item->progress_status}}</span></div>
+                                            @endif
+                                        </td>
+                                        <td>{{$item->qty}}</td>
+                                        {{-- <td>{{$item->qty}}</td> --}}
+                                        <td>
+                                            <a href="{{route('product.mytransaction.detail',$item->code)}}" class="btn btn-secondary btn-sm">Detail</a>
+                                            {{-- <a href="{{route('member.detail.transaction',$item->id)}}" class="btn btn-primary">Bayar</a> --}}
+                                            {{-- <form action="{{ route('member.transaction',$item->id) }}" method="POST" style="display: inline-block;">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger" value="Delete"
+                                                    onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data {{ $item->name }} ?')">
+                                                     Batalkan
+                                                </button>
+                                            </form> --}}
+                                        </td>
+                                    </tr>
+                                @endforeach
+    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

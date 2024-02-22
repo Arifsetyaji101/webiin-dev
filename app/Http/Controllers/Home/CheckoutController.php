@@ -15,6 +15,8 @@ use App\Service\TransactionService;
 use App\Service\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Service\CompanyProfileService;
+
 
 class CheckoutController extends Controller
 {
@@ -23,13 +25,16 @@ class CheckoutController extends Controller
     protected $productService;
     protected $userService;
     protected $couponService;
+    protected $companyProfile;
+
 
     public function __construct(
         RajaOngkirService $rajaOngkirService,
         TransactionService $transactionService,
         UserService $userService,
         ProductService $productService,
-        CouponService $couponService
+        CouponService $couponService,
+        CompanyProfileService $companyProfile
         )
     {
         $this->rajaOngkirService    = $rajaOngkirService;
@@ -37,6 +42,8 @@ class CheckoutController extends Controller
         $this->productService       = $productService;
         $this->userService          = $userService;
         $this->couponService        = $couponService;
+        $this->companyProfile = $companyProfile;
+
     }
 
     private function getCarts()
@@ -58,7 +65,8 @@ class CheckoutController extends Controller
             });
             $provinsi = $this->rajaOngkirService->getProvince();
             $breadcrumb = 'Checkout';
-            return view('home.pages.checkout.data',compact('cart', 'subtotal', 'weight_total','provinsi','breadcrumb'));
+            $company = $this->companyProfile->getAll();
+            return view('home.pages.checkout.data',compact('cart', 'subtotal', 'weight_total','provinsi','breadcrumb', 'company'));
         } else {
             return redirect()->back()->with('error','Login dahulu');
         }

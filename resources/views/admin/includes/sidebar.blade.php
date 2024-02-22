@@ -131,13 +131,13 @@
                 Produk & Service
             </li>
             @forelse ($productUser as $item)
-                <li class="active">
+                <li class="{{set_active('product.mytransaction')}} {{set_active('product.mytransaction.detail')}}">
                     <a href="{{route('product.mytransaction', $item->name)}}" ><i class="material-icons">web_asset</i>{{$item->name}}</a>
                     {{-- <a href="{{route('product.mytransaction', ['user' => Auth::user()->id, 'category' => $item->name])}}" ><i class="material-icons">web_asset</i>{{$item->name}}</a> --}}
                 </li>
             @empty
                 <li class="#">
-                    <a href="#" ><i class="material-icons">web_asset</i>Anda belum membeli produk</a>
+                    <a href="javascript:void(0);" ><i class="material-icons">web_asset</i>Anda belum membeli produk</a>
                 </li>
             @endforelse
 
